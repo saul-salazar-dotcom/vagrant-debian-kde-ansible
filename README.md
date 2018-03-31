@@ -1,0 +1,1 @@
+# vagrant-debian-stretch64-french-gui

@@ -1,0 +1,28 @@
+- name: Create a ext4 filesystem on volumes
+  filesystem:
+    fstype: ext4
+    dev: "{{item}}"
+  with_items:
+    - /dev/sdb
+    - /dev/sdc
+
+- name: Ensure mount directory is created
+  file:
+    state: directory
+    path: "{{item}}"
+    mode: 0777
+  with_items:
+    - /mnt/user
+    - /mnt/docker
+
+- name: Mount volumes
+  mount:
+    name: "{{item.name}}"
+    src: "{{item.src}}"
+    fstype: ext4
+    opts: defaults
+    state: mounted
+  with_items:
+    - { src: "/dev/sdb", name: "/mnt/user"}
+    - { src: "/dev/sdc", name: "/mnt/docker"}
+

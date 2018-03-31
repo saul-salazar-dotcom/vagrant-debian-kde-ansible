@@ -1,0 +1,20 @@
+- name: Ensure locale in inserted into locale.gen
+  locale_gen:
+    name: fr_FR.UTF-8
+    state: present
+
+- name: Ensure locale in inserted into locale.gen
+  locale_gen:
+    name: en_US.UTF-8
+    state: absent
+
+- name: Ensure LANG is set in environment file
+  lineinfile:
+    name: /etc/environment
+    regexp: '^LANG="fr_FR.UTF-8"$'
+    line: 'LANG="fr_FR.UTF-8"'
+
+- name: Reload locales
+  shell: "dpkg-reconfigure -f noninteractive locales"
+  environment:
+   - LANG: "fr_FR.UTF-8"

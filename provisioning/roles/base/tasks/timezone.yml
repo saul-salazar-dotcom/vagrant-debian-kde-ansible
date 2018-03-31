@@ -1,0 +1,8 @@
+- name: Ensure current timezone is set to Paris
+  file:
+    src: /usr/share/zoneinfo/Europe/Paris
+    dest: /etc/localtime
+    state: link
+
+- name: Reload timezone
+  shell: "dpkg-reconfigure -f noninteractive tzdata"

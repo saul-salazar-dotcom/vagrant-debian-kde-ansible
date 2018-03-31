@@ -1,0 +1,16 @@
+- name: Update repositories cache
+  apt:
+    update_cache: yes
+  become: yes
+
+- name: Ensure installers are installed
+  apt:
+    name: "{{item}}"
+  with_items:
+    - aptitude
+    - tasksel
+  become: yes
+
+- name: install KDE
+  shell: "aptitude install -y ~t^desktop$ ~t^kde-desktop$"
+  become: yes

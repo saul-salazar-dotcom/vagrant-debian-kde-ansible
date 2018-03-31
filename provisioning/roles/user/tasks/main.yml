@@ -1,0 +1,14 @@
+
+- name: Create sample user
+  user:
+    name: kevin
+    comment: kevin toublanc
+    home: /mnt/user/kevin
+    shell: /bin/bash
+  become: yes
+
+- file:
+    src: /mnt/user/kevin
+    dest: /home/kevin
+    state: link
+  become: yes

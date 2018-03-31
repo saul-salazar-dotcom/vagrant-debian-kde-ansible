@@ -1,0 +1,9 @@
+- name: Ensure keyboard is set to french
+  lineinfile:
+    name: /etc/default/keyboard
+    regexp: '^XKBLAYOUT='
+    line: 'XKBLAYOUT="fr"'
+
+- name: Reload keyboard
+  shell: "dpkg-reconfigure -f noninteractive keyboard-configuration"
+

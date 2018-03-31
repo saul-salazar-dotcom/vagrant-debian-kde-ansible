@@ -1,0 +1,13 @@
+
+- include: locales.yml
+  become: yes
+
+- include: timezone.yml
+  become: yes
+
+- include: keyboard.yml
+  become: yes
+
+- include: volumes.yml
+  become: yes
+

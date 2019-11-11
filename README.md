@@ -12,10 +12,22 @@ This configures:
 - KDE
 - A User on another volume
 
+## VirtualBox Guest Additions
+
+```
+$ vagrant plugin install vagrant-vbguest
+```
 
 ## How to Run ?
 
 ```bash
-vagrant up
+$ vagrant up
+
+# If GUI doesnt start, login and run startx
+$ startx
 ```
 
+## Default access
+
+User: vagrant  
+Pass: vagrant

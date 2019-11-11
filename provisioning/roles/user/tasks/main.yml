@@ -1,14 +1,23 @@
+- name: COPY | dotfiles for root
+  copy:
+    src: "{{ item }}"
+    dest: "/home/vagrant/.{{ item }}"
+  with_items:
+    - "bash_aliases"
+    - "screenrc"
+    - "gitconfig"
 
-- name: Create sample user
-  user:
-    name: kevin
-    comment: kevin toublanc
-    home: /mnt/user/kevin
-    shell: /bin/bash
+- name: Install some apps
+  apt:
+    pkg:
+    - git
+    - terminator
+    - unzip
+
+- include: linuxbrew.yml
   become: yes
 
-- file:
-    src: /mnt/user/kevin
-    dest: /home/kevin
-    state: link
-  become: yes
+- name: Install ZSH
+  shell: curl https://raw.githubusercontent.com/viasite-ansible/ansible-role-zsh/master/install.sh | bash
+  args:
+    warn: no

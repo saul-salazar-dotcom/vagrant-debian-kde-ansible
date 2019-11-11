@@ -1,6 +1,6 @@
 - name: Ensure current timezone is set to Paris
   file:
-    src: /usr/share/zoneinfo/Europe/Paris
+    src: /usr/share/zoneinfo/America/Monterrey
     dest: /etc/localtime
     state: link
 

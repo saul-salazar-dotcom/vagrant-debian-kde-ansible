@@ -1,0 +1,8 @@
+---
+# Configure VirtualBox VM Image
+
+- name: Install VirtualBox Guest Additions
+  include: guest-additions.yml
+
+- name: Clean Up
+  include: cleanup.yml

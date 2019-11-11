@@ -1,0 +1,25 @@
+---
+- name: Remove unneeded packages
+  apt: >
+    name={{item}}
+    state=absent
+  with_items:
+    - gtk2
+    - libX11
+    - hicolor-icon-theme
+    - avahi
+    - freetype
+    - bitstream-vera-fonts
+    - cpp
+    - kernel-devel
+    - kernel-headers
+
+# Removes all packages from the package cache
+# No equivalent ansible apt module option, read: https://github.com/ansible/ansible/issues/38920
+- name: Clean apt
+    command: apt-get clean
+
+- name: Clean Ruby Gems
+  file:
+    path: /tmp/rubygems-*
+    state: absent

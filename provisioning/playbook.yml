@@ -9,3 +9,29 @@
     - base
     - user
     - kde
+    # https://github.com/morgangraphics/ansible-role-nvm
+    - ansible-role-nvm
+    # https://github.com/fubarhouse/ansible-role-python.git
+    - ansible-role-python
+    # https://github.com/diodonfrost/ansible-role-terraform
+    - ansible-role-terraform
+    # https://github.com/geerlingguy/ansible-role-ansible
+    - ansible-role-ansible
+    # https://github.com/vbotka/ansible-doctl
+    - ansible-doctl
+    # https://github.com/apolloclark/ansible-role-aws-cli.git
+    - ansible-role-aws-cli
+    # https://github.com/geerlingguy/ansible-role-docker
+    - ansible-role-docker
+    # https://github.com/gantsign/ansible-role-golang
+    - ansible-role-golang
+    # https://github.com/geerlingguy/ansible-role-java
+    - ansible-role-java
+    # https://github.com/gantsign/ansible-role-visual-studio-code
+    - ansible-role-visual-studio-code
+    # https://github.com/gantsign/ansible-role-visual-studio-code-extensions
+    - ansible-role-visual-studio-code-extensions
+    # https://github.com/rdonkin/ansible-role-azure-cli
+    - ansible-role-azure-cli
+    # https://github.com/viasite-ansible/ansible-role-zsh
+    #- ansible-role-zsh

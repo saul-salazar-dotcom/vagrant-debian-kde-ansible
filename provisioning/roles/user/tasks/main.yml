@@ -14,9 +14,6 @@
     - terminator
     - unzip
 
-- include: linuxbrew.yml
-  become: yes
-
 - name: Install ZSH
   shell: curl https://raw.githubusercontent.com/viasite-ansible/ansible-role-zsh/master/install.sh | bash
   args:

@@ -34,4 +34,4 @@
     # https://github.com/rdonkin/ansible-role-azure-cli
     - ansible-role-azure-cli
     # https://github.com/viasite-ansible/ansible-role-zsh
-    #- ansible-role-zsh
+    - ansible-role-zsh
